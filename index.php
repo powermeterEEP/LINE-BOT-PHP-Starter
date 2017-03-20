@@ -1,2 +1,2 @@
 <?php
-echo "Hello LINE BOT";
+echo "I AM POWERMETER BOT LINE";
