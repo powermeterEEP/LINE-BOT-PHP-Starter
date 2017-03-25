@@ -9,7 +9,7 @@ $arrJson = json_decode($content, true);
  
 $strUrl = "https://api.line.me/v2/bot/message/reply";
 
-getMqttfromlineMsg($requestText);
+gethttpfromlineMsg($requestText);
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
