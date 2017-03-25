@@ -6,12 +6,37 @@ $strAccessToken = "w1wEzIFHJY2D9LB6vwEqPbX9WTE6CQCiIwv6IkfAvBIjQxorpgDGWsKZ9ePO6
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
+
+  $requestContent = $requestBodyObject->result{0}->content;
+  $requestText = $requestContent->text; 
+  $requestFrom = $requestContent->from; 
+  $contentType = $requestContent->contentType;
  
 $strUrl = "https://api.line.me/v2/bot/message/reply";
+
+getMqttfromlineMsg($requestText);
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+
+  $responseText = <<< EOM
+「{$requestText}」 this is msg echo from Line Bot API。http://binahead.com
+EOM;
+ 
+   
+  $responseMessage = <<< EOM
+    {
+      "to":["{$requestFrom}"],
+      "toChannel":1383378250,
+      "eventType":"138311608800106203",
+      "content":{
+        "contentType":1,
+        "toType":1,
+        "text":"{$responseText}"
+      }
+    }
+EOM;
  
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
