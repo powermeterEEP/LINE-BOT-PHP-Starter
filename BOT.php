@@ -8,37 +8,16 @@ $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
  
 $strUrl = "https://api.line.me/v2/bot/message/reply";
-
-gethttpfromlineMsg($requestText);
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-  $responseText = <<< EOM
-「{$requestText}」 this is msg echo from Line Bot API。http://binahead.com
-EOM;
- 
-   
-  $responseMessage = <<< EOM
-    {
-      "to":["{$requestFrom}"],
-      "toChannel":1383378250,
-      "eventType":"138311608800106203",
-      "content":{
-        "contentType":1,
-        "toType":1,
-        "text":"{$responseText}"
-      }
-    }
-EOM;
- 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-  echo "OK";
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
