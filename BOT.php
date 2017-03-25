@@ -49,5 +49,5 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 $result = curl_exec($ch);
 curl_close ($ch);
 
- echo $content . "\r\n";
+ echo $arrJson['events'][0]['message']['text'] == "" . "\r\n";
 ?>
