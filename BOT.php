@@ -49,5 +49,5 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 $result = curl_exec($ch);
 curl_close ($ch);
 
- echo $arrPostData . "\r\n";
+ echo $arrJson . "\r\n";
 ?>
