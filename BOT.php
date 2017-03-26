@@ -1,5 +1,5 @@
 <?php
-echo "Wellcom";
+echo "Wellcome";
 $proxy = 'velodrome.usefixie.com:80';
 $proxyauth = 'fixie:ZZ4nTjwPCevMpr8';
 $strAccessToken = "w1wEzIFHJY2D9LB6vwEqPbX9WTE6CQCiIwv6IkfAvBIjQxorpgDGWsKZ9ePO6lAjYv7fdZOVwlkuCi0y1T2yjF7ErUf38VL8BJ1x9ipB5Joc2YgJTIRBNBqzpVuSb71FJupY/GBTifzq/HqW3M12NwdB04t89/1O/w1cDnyilFU=";
@@ -36,7 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
- echo "NO";
+ //echo "NO";
 }
 
 $ch = curl_init();
