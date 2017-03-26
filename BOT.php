@@ -41,7 +41,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
 
-$ch = curl_init();
+$ch = curl_init("https://trialbot-api.line.me/v1/events");
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, true);
 curl_setopt($ch, CURLOPT_POST, true);
