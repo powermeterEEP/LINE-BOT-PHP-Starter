@@ -12,6 +12,7 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+$bot = new BOT_API($strAccessToken);
 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
