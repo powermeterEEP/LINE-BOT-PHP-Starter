@@ -35,7 +35,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
 
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
+if(['message']['text'] == "สวัสดี"){
 echo "Hello...............123.";}
 
 $ch = curl_init();
