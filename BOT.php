@@ -1,12 +1,12 @@
 <?php
-
+echo "Hello................";
 $proxy = 'velodrome.usefixie.com:80';
 $proxyauth = 'fixie:ZZ4nTjwPCevMpr8';
 $strAccessToken = "w1wEzIFHJY2D9LB6vwEqPbX9WTE6CQCiIwv6IkfAvBIjQxorpgDGWsKZ9ePO6lAjYv7fdZOVwlkuCi0y1T2yjF7ErUf38VL8BJ1x9ipB5Joc2YgJTIRBNBqzpVuSb71FJupY/GBTifzq/HqW3M12NwdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
- echo "Hello................";
+
 $strUrl = "https://api.line.me/v2/bot/message/reply";
  
 $arrHeader = array();
